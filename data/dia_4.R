@@ -86,6 +86,7 @@ arc_ayuso = net.tidy %>% ggraph(layout = "linear") +
                  fontface = "bold") +
   labs(title = "#AyusoGate en Twitter",
        subtitle = "Relaciones mas frecuentes entre palabras", 
+       caption = "#30diasdegraficos \n Fuente: Twitter | @EdudinGonzalo",
     edge_width = "N?? de relaciones ...") +
   theme(text = element_text(family = "Overpass Regular"))+
   theme(legend.position = "bottom", 
