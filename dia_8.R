@@ -3,8 +3,6 @@
 # @EdudinGonzalo
 #---------------------------------------------
 
-
-
 library(tidyverse)
 library(readxl)
 library(glue)
@@ -45,7 +43,7 @@ resi_dist = resis %>%
   theme_void() +
   theme(legend.position = 'none',
         text = element_text(family = "Overpass Regular"), 
-        plot.title = element_text(hjust = 0.5, margin=margin(0,0,6.25,0), size = 16), 
+        plot.title = element_text(hjust = 0.5, margin=margin(0,0,5.5, 0), size = 16), 
         plot.subtitle = element_text(hjust = 0.5, margin=margin(0,0,5,0), size = 9))
 
 ggsave("figs/resis.png", resi_dist, width = 9)
