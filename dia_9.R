@@ -16,16 +16,10 @@ year_2019 = read.csv("~/Downloads/volpre2019.csv",  sep = ";")
 
 mercado = bind_rows(year_2019, year_2020)
 
-productos = mercado %>%
-  group_by(inicio, descripcion_genero) %>%
-  mutate(kilos = as.numeric(kilos),
-         precio_moda = as.numeric(gsub(",", ".", precio_moda))) %>%
-  summarise(kilos_media = mean(kilos),
-            precio_media = mean(precio_moda))  %>%
+origen = mercado %>%
   ungroup() %>%
-  mutate(descripcion_genero = str_trim(descripcion_genero, "both"),
-         inicio = anydate(inicio))  %>%
-  filter(descripcion_genero %in% c("POLLO", "HUEVOS","VACUNO CANAL", "VACUNO ELABORADO")) 
+  count(descripcion_origen, sort = TRUE) 
+
 
 mercado_plot  = mercado %>%
   ungroup() %>%
@@ -34,11 +28,11 @@ mercado_plot  = mercado %>%
          descripcion_origen = str_trim(descripcion_origen, "both")) %>%
   filter(descripcion_origen %in% c("PONTEVEDRA",
                                    "MURCIA",
-                                   "GIPUZCOA", 
+                                   "GUIPUZCOA", 
                                    "VALENCIA",
                                    "MADRID",
-                                   "HUELVA","
-                                   FRANCIA", 
+                                   "HUELVA",
+                                   "FRANCIA", 
                                    "TOLEDO",
                                    "CASTELLON",
                                    "CADIZ", "ALMERIA", "PORTUGAL", "ALICANTE", 
