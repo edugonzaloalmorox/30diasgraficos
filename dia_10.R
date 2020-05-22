@@ -1,12 +1,12 @@
-library(sf)
-library(tidyverse)
-library(scico)
-library(extrafont)
-
 # Dia 10: 21/05/2020
 # Paletas
 # @EdudinGonzalo
 #---------------------------------------------
+
+library(sf)
+library(tidyverse)
+library(scico)
+library(extrafont)
 
 
 
