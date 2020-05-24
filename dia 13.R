@@ -44,11 +44,11 @@ accs = df %>%
   coord_fixed(ratio = 1.75) +
   labs(x = "", 
        y = "", 
-       title = "Accidentes de biciclet en Madrid durante la semana",
+       title = "Accidentes de bicicleta en Madrid durante la semana",
        fill = "Accidentes",
        caption =  "#30diasdegraficos \n Fuente: Ayuntamiento de Madrid | @EdudinGonzalo"
        ) +
-  theme(text = element_text(family = ""),
+  theme(text = element_text(family = "Avenir"),
     legend.position = "bottom")
   
 
